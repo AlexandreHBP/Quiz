@@ -1,0 +1,114 @@
+/* Fundo padrão para o corpo da aplicação */
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: url('./assets/galaxy-background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  min-height: 100vh;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* Estilo para o contêiner do quiz */
+.quiz-container {
+  background-color: rgba(0, 0, 0, 0.8); /* Fundo escuro e semi-transparente */
+  border-radius: 12px;
+  padding: 20px;
+  max-width: 500px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Sombra para dar profundidade */
+}
+
+/* Estilo para as perguntas */
+.question-text {
+  font-size: 1.5rem;
+  margin-bottom: 16px;
+}
+
+/* Estilo para os botões de opção */
+.option-button {
+  background-color: #2d3748; /* Fundo escuro */
+  color: white;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centraliza o texto horizontalmente */
+  text-align: center; /* Garante que o texto fique centralizado */
+  width: 100%; /* Garante que o botão ocupe toda a largura disponível */
+}
+
+.option-button:hover {
+  background-color: #4a5568; /* Cor de fundo ao passar o mouse */
+}
+
+/* Estilo para a seção de pontuação */
+.score-section {
+  font-size: 1.5rem;
+}
+
+/* Estilo para o título */
+h1 {
+  margin-bottom: 24px;
+  font-size: 2.5rem;
+  color: #ffffff;
+}
+
+/* Animação de estrelas cadentes */
+@keyframes falling-stars {
+  from {
+    transform: translateY(-10px) rotate(45deg);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(500px) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+/* Estilo para cada estrela */
+.star {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: white;
+  box-shadow: 0 0 6px 2px rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  animation: falling-stars 1s ease-in-out forwards;
+}
+
+/* Contêiner para as estrelas cadentes */
+.falling-stars-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Permite clicar nos elementos subjacentes */
+  z-index: 1000; /* Garante que as estrelas fiquem acima de outros elementos */
+}
+
+/* Animação de piscar em vermelho */
+@keyframes flash-red {
+  0% { opacity: 0; }
+  50% { opacity: 0.7; }
+  100% { opacity: 0; }
+}
+
+/* Contêiner do overlay vermelho */
+.flash-red-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 0, 0, 0.5); /* Vermelho meio transparente */
+  pointer-events: none; /* Permite clicar nos elementos subjacentes */
+  z-index: 1000; /* Garante que o overlay fique acima de outros elementos */
+  animation: flash-red 0.5s ease-in-out; /* Define a animação */
+}

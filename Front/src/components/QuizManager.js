@@ -81,7 +81,7 @@ const QuizManager = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center p-4">
-      <div className="bg-white bg-opacity-70 rounded-lg shadow-lg p-6 max-w-3xl w-full">
+      <div className="bg-white bg-opacity-70 rounded-lg shadow-lg p-6 w-full">
         <h1 className="text-3xl font-bold text-center mb-6 text-gray-700">Gerenciador de Quiz</h1>
         
         <form onSubmit={handleSubmit} className="mb-6">

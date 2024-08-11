@@ -8,8 +8,8 @@ function App() {
   const [activeTab, setActiveTab] = useState('quiz');
 
   return (
-    <div className="App min-h-screen flex flex-col items-center justify-center text-white">
-      <div className="w-full max-w-4xl">
+    <div className="min-h-screen flex flex-col items-center justify-center text-white">
+      <div className="w-full max-w-6xl">
         {/* Abas para alternar entre QuizSolar e QuizManager */}
         <div className="flex justify-center mb-6">
           <button

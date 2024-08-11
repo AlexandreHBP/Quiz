@@ -18,7 +18,7 @@ const QuizSolar = () => {
   useEffect(() => {
     axios.get('http://localhost:3000/quiz')
     .then(response => {
-      setQuestions(response.data)
+      setQuestions(response.data.sort((a, b) => Math.random() > .5 ? 1 : -1))
     })
     .catch(error => {
       alert(error.message)

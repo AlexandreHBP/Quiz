@@ -13,8 +13,8 @@ app.use(bodyParser.json());
 // Configuração da conexão com o banco de dados MySQL
 const db = mysql.createConnection({
     host: 'localhost',
-    user: 'root',
-    password: '123456',
+    user: 'ale',
+    password: 'Senha@1234',
     database: 'quiz_db'
 });
 

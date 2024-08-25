@@ -16,7 +16,9 @@ const QuizSolar = () => {
   });
 
   useEffect(() => {
-    axios.get('http://localhost:3000/quiz')
+    const params = new URLSearchParams(window.location.search);
+    const user_id = params.get('user_id')
+    axios.get('http://localhost:3000/quiz?user_id='+user_id)
     .then(response => {
       setQuestions(response.data.sort((a, b) => Math.random() > .5 ? 1 : -1))
     })

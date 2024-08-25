@@ -17,15 +17,23 @@ const QuizManager = () => {
 
   const fetchQuizzes = async () => {
     try {
-      const response = await axios.get('http://localhost:3000/quiz');
+      const params = new URLSearchParams(window.location.search);
+      const user_id = params.get('user_id')
+
+      const response = await axios.get('http://localhost:3000/quiz?user_id='+user_id);
       setQuizzes(response.data);
     } catch (error) {
       console.error('Erro ao buscar quizzes:', error);
     }
   };
 
+
   const handleSubmit = async (event) => {
     event.preventDefault();
+
+    const params = new URLSearchParams(window.location.search);
+    const user_id = params.get('user_id')
+
     const quizData = {
       question,
       option_1: option1,
@@ -33,6 +41,7 @@ const QuizManager = () => {
       option_3: option3,
       option_4: option4,
       correct_number: correctNumber,
+      user_id: user_id
     };
 
     try {
